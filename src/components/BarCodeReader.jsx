@@ -22,6 +22,7 @@ const BarCodeReader = ({ getTurnos }) => {
             toast.info("Mensaje", {
               description: 'Su carnet no se pudo leer, Porfavor pongalo nuevamente',
             });
+            setBarcode("");
             return;
           }
           // await axios.get(`https://laureles-ap.onrender.com/api/v1/bloq/bloqueos/${movil}`)
