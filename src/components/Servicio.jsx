@@ -8,6 +8,7 @@ import { Toaster, toast } from "sonner";
 import SweetAlert2 from "react-sweetalert2";
 import { io } from "socket.io-client";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const socket = io("https://laureles-ap.onrender.com", {
   withCredentials: true
 }); // URL del servidor
@@ -23,7 +24,7 @@ const Servicio = ({
   const [swalProps, setSwalProps] = useState({});
   const channel = new BroadcastChannel("mi-canal");
   const [messages, setMessages] = useState([]);
-
+  const navigate = useNavigate();
   const actualizaInfoSockets = async () => {
     await axios
       .get("https://laureles-ap.onrender.com/api/v1/servicio/servicio")
@@ -73,6 +74,10 @@ const Servicio = ({
     setIsModalOpen(true);
     handleUpdateMoviles();
   };
+
+  const redirige = () => {
+     navigate("/principal");
+  }
   // Función para cerrar el modal
   const closeModal = () => setIsModalOpen(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
@@ -721,6 +726,8 @@ const Servicio = ({
                   closeModal2={closeModal2}
                 />
               </button>
+              <Link to="/conductores"  className="bg-green-500 text-white rounded-md px-2 py-1 hover:bg-green-600 focus:outline-none transition-colors">Conductores</Link>
+
             </div>
 
             {/* <div className="flex gap-3 pt-3">
