@@ -1,0 +1,61 @@
+const g = {
+    nombreImpresora: "Generic",
+    serial: "aa",
+    operaciones: [
+      {
+        "nombre": "EstablecerTamañoFuente",
+        "argumentos": [
+          1,
+          1
+        ]
+      },
+      {
+        "nombre": "EstablecerEnfatizado",
+        "argumentos": [
+          false
+        ]
+      },
+      {
+        "nombre": "EstablecerAlineacion",
+        "argumentos": [
+          1
+        ]
+      },
+      {
+        "nombre": "EstablecerSubrayado",
+        "argumentos": [
+          false
+        ]
+      },
+      {
+        "nombre": "EstablecerImpresionAlReves",
+        "argumentos": [
+          false
+        ]
+      },
+      {
+        "nombre": "EstablecerImpresionBlancoYNegroInversa",
+        "argumentos": [
+          false
+        ]
+      },
+      {
+        "nombre": "EstablecerRotacionDe90Grados",
+        "argumentos": [
+          false
+        ]
+      },
+      {
+        "nombre": "EscribirTexto",
+        "argumentos": [
+          "Servicio creadonPara el dia de hoynPandas"
+        ]
+      },
+      {
+        "nombre": "Feed",
+        "argumentos": [
+          1
+        ]
+      }
+    ]
+}
