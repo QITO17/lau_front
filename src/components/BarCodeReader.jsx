@@ -7,14 +7,14 @@ const BarCodeReader = ({ getTurnos }) => {
   // const [bloqueado, setBloqueado] = useState("");
   useEffect(() => {
     const handleKeyDown = async (event) => {
-      let bloqueado;
+      //let bloqueado;
       // Verifica si la tecla presionada es Enter (o la tecla que uses para terminar el código)
       if (event.key === "Enter") {
       
         // Resetea el código de barras después de imprimirlo
         try {
           const movil = barcode.substring(4, 8);
-          const cedconduce = barcode.substring(4, 8);
+          const cedconduce = movil//barcode.substring(4, 8);
 
           const esSoloNumeros = (cadena) => /^[0-9]+$/.test(cadena);
 
