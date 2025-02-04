@@ -314,7 +314,7 @@ const Servicio2 = ({
                   <tbody className="bg-grey-light">
                     {data.Turnos?.map((item, index) => (
                       <tr key={index} className="mb-2">
-                        <td className="text-[25px]">{item.movil}</td>
+                        <td className="text-[25px]"><span className="text-green-600">{index+1}&nbsp;&nbsp;&nbsp;&nbsp; </span>  {item.movil}</td>
                       </tr>
                     ))}
                   </tbody>
