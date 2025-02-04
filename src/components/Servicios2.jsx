@@ -65,10 +65,11 @@ const Servicio2 = ({
       {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
       {"nombre":"EscribirTexto","argumentos":
       ["Fecha de solicitud del servicio ${fecha}\\nHora de solicitud del servicio ${hora}\\nDireccion: ${data.creado.direccion}\\n\\n"]}
-      ,{"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[1,1]},{"nombre":"EstablecerEnfatizado","argumentos":[false]},
+      ,{"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,1]},{"nombre":"EstablecerEnfatizado","argumentos":[false]},
       {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},{"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
       {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},{"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
       {"nombre":"EscribirTexto","argumentos":["PQRS: pqrs@ctmcootransmede.com\\n"]},{"nombre":"Feed","argumentos":[1]},
+      
       {"nombre":"EstablecerTamañoFuente","argumentos":[2,1]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
       {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},
       {"nombre":"EstablecerImpresionAlReves","argumentos":[false]},{"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
