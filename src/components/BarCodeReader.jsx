@@ -19,9 +19,9 @@ const BarCodeReader = ({ getTurnos }) => {
           const esSoloNumeros = (cadena) => /^[0-9]+$/.test(cadena);
 
           if(!esSoloNumeros(movil) || !esSoloNumeros(cedconduce) ){
-            toast.info("Mensaje", {
-              description: 'Su carnet no se pudo leer, Porfavor pongalo nuevamente',
-            });
+           // toast.info("Mensaje", {
+             // description: 'Su carnet no se pudo leer, Porfavor pongalo nuevamente',
+            //});
             setBarcode("");
             return;
           }
