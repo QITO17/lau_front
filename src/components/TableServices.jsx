@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Logo from "/public/ctm2.jpeg";
-import Logo2 from "/public/tolan2.png";
+import Logo2 from "/public/tolan2.jpg";
 
 
 const ScrollableTable = ({ servicios }) => {
