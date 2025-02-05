@@ -46,7 +46,7 @@ const Servicio2 = ({
       {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
       {"nombre":"EscribirTexto","argumentos":["\\n\\n\\nCTM COOTRANSMEDE"]}
       ,{"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,2]},
-      {"nombre":"EstablecerEnfatizado","argumentos":[false]},{"nombre":"EstablecerAlineacion","argumentos":[1]},
+      {"nombre":"EstablecerEnfatizado","argumentos":[true]},{"nombre":"EstablecerAlineacion","argumentos":[1]},
       {"nombre":"EstablecerSubrayado","argumentos":[false]},{"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
       {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
       {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
@@ -59,13 +59,13 @@ const Servicio2 = ({
       {"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
       {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
       {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},{"nombre":"EscribirTexto","argumentos":["${data.creado.movil}\\n\\n"]},
-      {"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,2]},{"nombre":"EstablecerEnfatizado","argumentos":[false]},
+      {"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,2]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
       {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},
       {"nombre":"EstablecerImpresionAlReves","argumentos":[false]},{"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
       {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
       {"nombre":"EscribirTexto","argumentos":
       ["Fecha de solicitud del servicio ${fecha}\\nHora de solicitud del servicio ${hora}\\nDireccion: ${data.creado.direccion}\\n\\n"]}
-      ,{"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,2]},{"nombre":"EstablecerEnfatizado","argumentos":[false]},
+      ,{"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,2]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
       {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},{"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
       {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},{"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
       {"nombre":"EscribirTexto","argumentos":["PQRS: pqrs@ctmcootransmede.com\\n"]},{"nombre":"Feed","argumentos":[1]},
@@ -76,7 +76,7 @@ const Servicio2 = ({
       {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},{"nombre":"EscribirTexto","argumentos":
       ["Servicio de taxi\\n Via WhatsApp"]},{"nombre":"Feed","argumentos":[1]},
       
-      {"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,2]},{"nombre":"EstablecerEnfatizado","argumentos":[false]},
+      {"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,2]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
       {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},{"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
       {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},{"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
       {"nombre":"EscribirTexto","argumentos":["BOT: 5743220707\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n"]},{"nombre":"Feed","argumentos":[1]},
