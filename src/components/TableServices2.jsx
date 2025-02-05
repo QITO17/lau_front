@@ -23,8 +23,8 @@ const ScrollableTable = ({ servicios }) => {
             <tr>
               {/* <th className="p-4 w-1/3">Telefono</th> */}
               {/* <th className="p-4 w-1/3">Usuario</th> */}
-              <th className="p-4 w-1/3 font-bold text-[20px]">Dirección</th>
-              <th className="p-4 w-1/3 font-bold text-[20px]">Movil</th>
+              <th className="p-4 w-1/3">Dirección</th>
+              <th className="p-4 w-1/3">Movil</th>
               {/* <th className="p-4 w-1/3">Barrio</th> */}
               <th className="p-4 w-1/5">Hora</th>
             </tr>
@@ -35,8 +35,8 @@ const ScrollableTable = ({ servicios }) => {
               
                 {/* <td className="p-4 w-1/4">{item.telefono}</td> */}
                 {/* <td className="p-4 w-1/4">{item.usuario}</td> */}
-                <td className="p-4 w-1/4">{item.direccion}</td>
-                <td className="p-4 w-1/4">{item.movil}</td>
+                <td className="p-4 w-1/4 font-bold text-[20px]">{item.direccion}</td>
+                <td className="p-4 w-1/4 font-bold text-[20px]">{item.movil}</td>
                 {/* <td className="p-4 w-1/4">{item.barrio}</td> */}
                 <td className="p-4 w-1/4">{item.createdAt.slice(11, 19)}</td>
               </tr>
