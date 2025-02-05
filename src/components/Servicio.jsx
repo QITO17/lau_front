@@ -104,299 +104,57 @@ const Servicio = ({
     console.log('Hola soy hora ', hora)
     console.log('Hola soy hora ', fecha)
     const payload =
-      `{
-    "nombreImpresora": "Gereri2",
-    "serial": "MGE4NTNlM2VfXzIwMjUtMDEtMDlfXzIwMjUtMDItMDgjIyNWR1dlYm5HRGkwYWZCelpoU05rb1BEQlQ1cGFKS29rZnVkSC9CNUp1Z3dVb3JSc2traUFQMHFBS2JrSVB3Sjd5L3pjWVkrZklZMmgvL2F6WU1VWWRXN1FybkhBd0oybDAyNUh0Y2psOTFWb1pBWGVpdnlJYmt6YXJHNXNoeG01eXg3TFJNeXRRVVBWV0RuOG43MzNJYU1zWkNrVUZrMVhaMVVoMGVNS1NrcU9CRXZuMFZjR2N0SnU4ZlhRUEtTZXdoTzRhYXNTNEpPZVJRNmJDL0t0aitBRTFYdjRveEVIbWF6U0J0Zkp3dHZNSytKUjlmNCs0N1ZRVEN1NnJyaG13dGpENmh3OTlLd2FQUy96cDdURTVGTTZRcUJqd1J3ZlVLWmZKWktYaUZxV2dEdTZWYXJ2MkFMenRGYitNeXNqaDlVdzhFQWNnT1U1KzhseTR2QUh2eldLZlZ5amtXOWtON2ZGWlB4d0RLaHRwYWZyVkVpaXpoYVZiQlJRQzNyNUNXbyt3L0VqY1FFa2xDMityamMrN3pISkV0RnNIY1VEdVpPSkpsYi8rRUx0T0hiVHNZTHI2aS8zWkhTb3Q2UHVlay9ndEh5UCsxZTBoTUVqRU5kcHpUZHZSV3I2NnBWT3IzODNxMXhkVnhTVzdYVE9iN0k3V0ZFeVJVTW1SSmczamloY3ZXS0V4QTFMUWZoUythS05WRFNibXp1UGNhb0VocHd1OGJNNzFtMVJXL3hNNk1weHZCczlnVGFpY3MvRkpEd04vdGowM2xmS3VLME4rUlpGaHhRVnR2MW5iVUMvS25pU1RYRjVZZmt6TTVIV29xeldLYjJmR2hMeEpsT1Mvc3E2UFBNa0hDYitHRlUzWmNWMGlPbE4rbjBjUEVic1pETTdWSzdWVEcwWT0",
-    "operaciones": [
-        {
-            "nombre": "EstablecerTamañoFuente",
-            "argumentos": [
-                3,
-                2
-            ]
-        },
-        {
-            "nombre": "EstablecerEnfatizado",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerAlineacion",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerSubrayado",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionAlReves",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionBlancoYNegroInversa",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerRotacionDe90Grados",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EscribirTexto",
-            "argumentos": [
-                "CTM COOTRANSMEDE"
-            ]
-        },
-        {
-            "nombre": "Feed",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerTamañoFuente",
-            "argumentos": [
-                2,
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerEnfatizado",
-            "argumentos": [
-                true
-            ]
-        },
-        {
-            "nombre": "EstablecerAlineacion",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerSubrayado",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionAlReves",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionBlancoYNegroInversa",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerRotacionDe90Grados",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EscribirTexto",
-            "argumentos": [
-                "Acopio Exclusivo\nSector de Laureles"
-            ]
-        },
-        {
-            "nombre": "Feed",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "TextoSegunPaginaDeCodigos",
-            "argumentos": [
-                0,
-                "cp850",
-                "\n\nSu Móvil Seguro"
-            ]
-        },
-        {
-            "nombre": "EstablecerTamañoFuente",
-            "argumentos": [
-                4,
-                3
-            ]
-        },
-        {
-            "nombre": "EstablecerEnfatizado",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerAlineacion",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerSubrayado",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionAlReves",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionBlancoYNegroInversa",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerRotacionDe90Grados",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EscribirTexto",
-            "argumentos": [
-                "\n5906"
-            ]
-        },
-        {
-            "nombre": "Feed",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerTamañoFuente",
-            "argumentos": [
-                1,
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerEnfatizado",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerAlineacion",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerSubrayado",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionAlReves",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionBlancoYNegroInversa",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerRotacionDe90Grados",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EscribirTexto",
-            "argumentos": [
-                "\nFecha de solicitud: 2024-01-20\nHora de solicitud: 8:21:06\nDireccion: Calle 58 c 98 b 15\n\nPQRS: pqrs@ctmcootransmede.com\n\nServicio de taxi\nVia WhatsApp\n"
-            ]
-        },
-        {
-            "nombre": "Feed",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerTamañoFuente",
-            "argumentos": [
-                1,
-                2
-            ]
-        },
-        {
-            "nombre": "EstablecerEnfatizado",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerAlineacion",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "EstablecerSubrayado",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionAlReves",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerImpresionBlancoYNegroInversa",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EstablecerRotacionDe90Grados",
-            "argumentos": [
-                false
-            ]
-        },
-        {
-            "nombre": "EscribirTexto",
-            "argumentos": [
-                "Bot 574 3220707\n\n\n\n\n\n\n\n\n\n\n"
-            ]
-        },
-        {
-            "nombre": "Feed",
-            "argumentos": [
-                1
-            ]
-        },
-        {
-            "nombre": "CorteParcial",
-            "argumentos": []
-        }
-    ]
-}`;
+      `{"nombreImpresora":"Gereri2",
+      "serial":"MGE4NTNlM2VfXzIwMjUtMDEtMDlfXzIwMjUtMDItMDgjIyNWR1dlYm5HRGkwYWZCelpoU05rb1BEQlQ1cGFKS29rZnVkSC9CNUp1Z3dVb3JSc2traUFQMHFBS2JrSVB3Sjd5L3pjWVkrZklZMmgvL2F6WU1VWWRXN1FybkhBd0oybDAyNUh0Y2psOTFWb1pBWGVpdnlJYmt6YXJHNXNoeG01eXg3TFJNeXRRVVBWV0RuOG43MzNJYU1zWkNrVUZrMVhaMVVoMGVNS1NrcU9CRXZuMFZjR2N0SnU4ZlhRUEtTZXdoTzRhYXNTNEpPZVJRNmJDL0t0aitBRTFYdjRveEVIbWF6U0J0Zkp3dHZNSytKUjlmNCs0N1ZRVEN1NnJyaG13dGpENmh3OTlLd2FQUy96cDdURTVGTTZRcUJqd1J3ZlVLWmZKWktYaUZxV2dEdTZWYXJ2MkFMenRGYitNeXNqaDlVdzhFQWNnT1U1KzhseTR2QUh2eldLZlZ5amtXOWtON2ZGWlB4d0RLaHRwYWZyVkVpaXpoYVZiQlJRQzNyNUNXbyt3L0VqY1FFa2xDMityamMrN3pISkV0RnNIY1VEdVpPSkpsYi8rRUx0T0hiVHNZTHI2aS8zWkhTb3Q2UHVlay9ndEh5UCsxZTBoTUVqRU5kcHpUZHZSV3I2NnBWT3IzODNxMXhkVnhTVzdYVE9iN0k3V0ZFeVJVTW1SSmczamloY3ZXS0V4QTFMUWZoUythS05WRFNibXp1UGNhb0VocHd1OGJNNzFtMVJXL3hNNk1weHZCczlnVGFpY3MvRkpEd04vdGowM2xmS3VLME4rUlpGaHhRVnR2MW5iVUMvS25pU1RYRjVZZmt6TTVIV29xeldLYjJmR2hMeEpsT1Mvc3E2UFBNa0hDYitHRlUzWmNWMGlPbE4rbjBjUEVic1pETTdWSzdWVEcwWT0=",
+      "operaciones":
+      [ 
+      {"nombre":"EstablecerTamañoFuente","argumentos":[3,2]},
+      {"nombre":"EstablecerEnfatizado","argumentos":[true]},
+      {"nombre":"EstablecerAlineacion","argumentos":[1]},
+      {"nombre":"EstablecerSubrayado","argumentos":[false]},
+      {"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
+      {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
+      {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
+      {"nombre":"EscribirTexto","argumentos":["\\n\\n\\nCTM COOTRANSMEDE"]}
+      ,{"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,2]},
+      {"nombre":"EstablecerEnfatizado","argumentos":[true]},{"nombre":"EstablecerAlineacion","argumentos":[1]},
+      {"nombre":"EstablecerSubrayado","argumentos":[false]},{"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
+      {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
+      {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
+      {"nombre":"EscribirTexto","argumentos":["Acopio Exclusivo\\nSector de Laureles\\n\\n\\nSu Movil Seguro"]},
+      {"nombre":"Feed","argumentos":[1]},
+      {"nombre":"EstablecerTamañoFuente","argumentos":[4,3]},
+      {"nombre":"EstablecerEnfatizado","argumentos":[true]},
+      {"nombre":"EstablecerAlineacion","argumentos":[1]},
+      {"nombre":"EstablecerSubrayado","argumentos":[false]},
+      {"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
+      {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
+      {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},{"nombre":"EscribirTexto","argumentos":["${data.creado.movil}\\n\\n"]},
+      {"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,1]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
+      {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},
+      {"nombre":"EstablecerImpresionAlReves","argumentos":[false]},{"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
+      {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
+      {"nombre":"EscribirTexto","argumentos":
+      ["Fecha de solicitud del servicio ${fecha}\\nHora de solicitud del servicio ${hora}\\nDireccion: ${data.creado.direccion}\\n\\n"]}
+      ,{"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,1]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
+      {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},{"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
+      {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},{"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
+      {"nombre":"EscribirTexto","argumentos":["PQRS: pqrs@ctmcootransmede.com\\n"]},{"nombre":"Feed","argumentos":[1]},
+      
+      {"nombre":"EstablecerTamañoFuente","argumentos":[2,1]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
+      {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},
+      {"nombre":"EstablecerImpresionAlReves","argumentos":[false]},{"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
+      {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},{"nombre":"EscribirTexto","argumentos":
+      ["Servicio de taxi\\n Via WhatsApp"]},{"nombre":"Feed","argumentos":[1]},
+      
+      {"nombre":"Feed","argumentos":[1]},{"nombre":"EstablecerTamañoFuente","argumentos":[2,1]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
+      {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},{"nombre":"EstablecerImpresionAlReves","argumentos":[false]},
+      {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},{"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
+      {"nombre":"EscribirTexto","argumentos":["BOT: 5743220707\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n"]},{"nombre":"Feed","argumentos":[1]},
+      
+      
+      {"nombre":"CorteParcial","argumentos":[]}]
+      }`;
 
     fetch("http://localhost:8000/imprimir", {
       method: "POST",
