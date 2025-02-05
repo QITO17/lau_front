@@ -70,7 +70,7 @@ const Servicio2 = ({
       {"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},{"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},
       {"nombre":"EscribirTexto","argumentos":["PQRS: pqrs@ctmcootransmede.com\\n"]},{"nombre":"Feed","argumentos":[1]},
       
-      {"nombre":"EstablecerTamañoFuente","argumentos":[2,1]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
+      {"nombre":"EstablecerTamañoFuente","argumentos":[2,2]},{"nombre":"EstablecerEnfatizado","argumentos":[true]},
       {"nombre":"EstablecerAlineacion","argumentos":[1]},{"nombre":"EstablecerSubrayado","argumentos":[false]},
       {"nombre":"EstablecerImpresionAlReves","argumentos":[false]},{"nombre":"EstablecerImpresionBlancoYNegroInversa","argumentos":[false]},
       {"nombre":"EstablecerRotacionDe90Grados","argumentos":[false]},{"nombre":"EscribirTexto","argumentos":
