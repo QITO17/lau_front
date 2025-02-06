@@ -18,7 +18,7 @@ const BarCodeReader = ({ getTurnos }) => {
 
           const esSoloNumeros = (cadena) => /^[0-9]+$/.test(cadena);
 
-          if(!esSoloNumeros(movil) || !esSoloNumeros(cedconduce) ){
+          if(!esSoloNumeros(movil) || !esSoloNumeros(cedconduce) || movil[0] == '0'){
            // toast.info("Mensaje", {
              // description: 'Su carnet no se pudo leer, Porfavor pongalo nuevamente',
             //});
