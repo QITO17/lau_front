@@ -98,7 +98,7 @@ const Servicio = ({
     const fechaFormateada = fechaActual.toISOString().split('T')[0];
     let fecha = fechaFormateada;
     const fechaHora = new Date();
-    const horaFormateada = fechaHora.toLocaleTimeString();
+    const horaFormateada = fechaHora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     let hora = horaFormateada
     console.log('Holita')
     console.log('Hola soy hora ', hora)
