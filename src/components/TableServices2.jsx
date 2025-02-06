@@ -19,7 +19,7 @@ const ScrollableTable = ({ servicios }) => {
       <p className=' font-bold text-[20px]'>Servicios</p>
       <div className="overflow-y-auto" style={{ maxHeight: '65vh' }}>
         <table className="min-w-full text-left border-collapse">
-          <thead className="bg-green-500 text-white">
+          <thead className="bg-green-500 text-white text-center">
             <tr>
               {/* <th className="p-4 w-1/3">Telefono</th> */}
               {/* <th className="p-4 w-1/3">Usuario</th> */}
@@ -31,7 +31,7 @@ const ScrollableTable = ({ servicios }) => {
           </thead>
           <tbody className="bg-gray-100">
             {servicios.Servicios?.map((item, index) => (
-              <tr key={index} className="border-b">
+              <tr key={index} className="border-b text-center">
               
                 {/* <td className="p-4 w-1/4">{item.telefono}</td> */}
                 {/* <td className="p-4 w-1/4">{item.usuario}</td> */}
