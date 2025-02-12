@@ -46,7 +46,7 @@ const Moviles = ({ isModalOpen, openModal, closeModal, MovilesState }) => {
                 {/* &times; */}❌
               </button>
               <h2 className="text-xl font-semibold mb-4">MOVILES CTM</h2>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-center items-center">
                 <p>Moviles Enturnados.</p>
                 <img className="mb-3 h-[350px] pb-4" src={Logo} alt="" />
               </div>
@@ -67,23 +67,26 @@ const Moviles = ({ isModalOpen, openModal, closeModal, MovilesState }) => {
                       </th>
                       <th scope="col" className="py-3 px-6">
                         Nombre
-                      </th> */}
-                      <th scope="col" className="py-3 px-6">
+                      </th> 
+                       <th scope="col" className="py-3 px-6">
                         Cedula
                       </th>
+                      */}
+                     
                     </tr>
                   </thead>
                   <tbody>
-                    {MovilesState?.Turnos.map((movil) => (
+                    {MovilesState?.Turnos.map((movil, index) => (
                       <tr
                         className="bg-white border-b dark:bg-white dark:border-gray-700"
                         key={movil.id}
                       >
-                        <td className="py-4 px-6">{movil.movil}</td>
+                        <td className="py-4 px-6 text-[20px]"><span className="text-green-500">{index+1}º</span> {movil.movil}</td>
                         {/* <td className="py-4 px-6">{movil.placa}</td>
                         <td className="py-4 px-6">{movil.marca}</td>
-                        <td className="py-4 px-6">{movil.nomconduce}</td> */}
                         <td className="py-4 px-6">{movil.cedconduce}</td>
+                        <td className="py-4 px-6">{movil.nomconduce}</td> */}
+                        
                       </tr>
                     ))}
 
