@@ -400,7 +400,7 @@ const Servicio = ({
               /> */}
             </div>
 
-            <div className="flex gap-3 flex-wrap">
+            <div className="flex gap-3 ">
               <button
                 type="submit"
                 className="bg-blue-500 text-white rounded-md px-2 py-1 hover:bg-blue-600 focus:outline-none transition-colors"
@@ -415,7 +415,7 @@ const Servicio = ({
                 Limpiar
               </button>
             </div>
-            <div className="flex gap-3 pt-3">
+            <div className="flex gap-3 pt-3 flex-wrap">
               <Link to="/informes"  className="bg-green-500 text-white rounded-md px-2 py-1 hover:bg-green-600 focus:outline-none transition-colors">Informes</Link>
                <Moviles
                 
