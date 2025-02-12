@@ -7,7 +7,7 @@ const BarCodeReader = ({ getTurnos }) => {
   // const [bloqueado, setBloqueado] = useState("");
   useEffect(() => {
     const handleKeyDown = async (event) => {
-      //let bloqueado;
+      let bloqueado;
       // Verifica si la tecla presionada es Enter (o la tecla que uses para terminar el código)
       if (event.key === "Enter") {
       
@@ -25,22 +25,22 @@ const BarCodeReader = ({ getTurnos }) => {
             setBarcode("");
             return;
           }
-          // await axios.get(`https://laureles-ap.onrender.com/api/v1/bloq/bloqueos/${movil}`)
-          // .then(res => {
-          //   bloqueado = '200'
-          // })
-          // .catch(err => {
-          //   if(err.status == 404) bloqueado = 404
-          // })
+           await axios.get(`https://laureles-ap.onrender.com/api/v1/bloq/bloqueos/${movil}`)
+           .then(res => {
+             bloqueado = '200'
+           })
+           .catch(err => {
+             if(err.status == 404) bloqueado = 404
+           })
           
 
-          // if(bloqueado == 200){
+          if(bloqueado == 200){
           //   toast.error("Mensaje", {
           //     description: 'NOVEDAD ADMINISTRATIVA',
           //   });
-          //   setBarcode("");
-          //   return
-          // } 
+          setBarcode("");
+             return
+           } 
           const res1 = await axios.post(
             `https://laureles-ap.onrender.com/api/v1/turno/turno`,
             {
