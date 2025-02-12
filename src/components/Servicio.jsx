@@ -417,14 +417,14 @@ const Servicio = ({
             </div>
             <div className="flex gap-3 pt-3">
               <Link to="/informes"  className="bg-green-500 text-white rounded-md px-2 py-1 hover:bg-green-600 focus:outline-none transition-colors">Informes</Link>
-              {/* <Moviles
+               <Moviles
                 
                 MovilesState={MovilesState}
                 isModalOpen={isModalOpen}
                 setIsModalOpen={setIsModalOpen}
                 openModal={openModal}
                 closeModal={closeModal}
-              /> */}
+              /> 
               <button
                 type="button" // Añadir type="button"
                 className="bg-green-500 text-white rounded-md px-2 py-1 hover:bg-green-600 focus:outline-none transition-colors"
