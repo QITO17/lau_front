@@ -47,7 +47,7 @@ const Moviles = ({ isModalOpen, openModal, closeModal, MovilesState }) => {
               </button>
               <h2 className="text-xl font-semibold mb-4">MOVILES CTM</h2>
               <div className="flex justify-center items-center">
-                <p>Moviles Enturnados.</p>
+                
                 <img className="mb-3 h-[350px] pb-4" src={Logo} alt="" />
               </div>
 
