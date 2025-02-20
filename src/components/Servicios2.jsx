@@ -114,6 +114,37 @@ const Servicio2 = ({
       //setMessages((prevMessages) => [...prevMessages, data.message]);
       imprimir(data)
     });
+    
+
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      socket.off('dbChange2');
+    };
+  }, []);
+
+   useEffect(() => {
+
+    socket.on('dbChange4', async (data) => {
+      console.log('Cambio en la base de datos XDDDDDDDDDDDDDDDDDDDD:', data);
+      // axios.delete(
+      //   `https://laureles-ap.onrender.com/api/v1/turno/turno/${data.creado.movil}`
+      // ).then(res => console.log('Ya borre en sockets', res))
+      // .catch(err => console.log(err, 'No borre en sockets'))
+
+
+      await axios
+        .get("https://laureles-ap.onrender.com/api/v1/servicio/servicio")
+        .then((res) => setServicios(res.data))
+        .catch((err) => console.log(err));
+
+      await axios
+        .get(`https://laureles-ap.onrender.com/api/v1/turno/turno/`)
+        .then((res) => setData(res.data))
+        .catch((err) => console.log(err));
+      //setMessages((prevMessages) => [...prevMessages, data.message]);
+      //imprimir(data)
+    });
+    
 
     // Limpiar el evento al desmontar el componente
     return () => {
