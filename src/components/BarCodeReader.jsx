@@ -55,14 +55,33 @@ const BarCodeReader = ({ getTurnos }) => {
           const ced = barcode.substring(8)
           
           if (error.response && error.response.status === 409) {
+            const movil = barcode.substring(4, 8);
+            let fecha;
+            const fechaActual = new Date().toISOString().split('T')[0];
+           // const res2 = await axios.delete(
+           //   `https://laureles-ap.onrender.com/api/v1/turno/turno/${cedconduce}`,
+           //   {
+           //     movil,
+           //     cedconduce,
+           //   }
+           // );
+         const dataQuemada = {
+              textos_completos: "0",
+              linea: "6043220707",
+              movil: "0000",
+              fecha: fechaActual,
+              usuario: "CONDUCTOR [DESENTURNO]",
+              telefono: "6043220707",
+              conductor: movil,
+              direccion "ESTACIONAMIENTO ACOPIO LAURELES",
+              barrio: "Laureles",
+              usrgraba: "Dev",
+            };
             
-            const res2 = await axios.delete(
-              `https://laureles-ap.onrender.com/api/v1/turno/turno/${cedconduce}`,
-              {
-                movil,
-                cedconduce,
-              }
-            );
+            axios
+              .post("https://laureles-ap.onrender.com/api/v1/servicio/servicio", dataQuemada)
+              .then((res) => console.log(res.data))
+              .catch((err) => console.log(err));
             setBarcode("");
             getTurnos();
             // Muestra el mensaje de error al usuario
