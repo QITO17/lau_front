@@ -51,6 +51,21 @@ const Servicio = ({
     };
   }, []);
 
+    useEffect(() => {
+    socket.on("dbChange3", (data) => {
+      console.log("Cambio en la base de datos:", data);
+      //setServicios(servicios)
+      actualizaInfoSockets();
+      setMessages((prevMessages) => [...prevMessages, data.message]);
+    });
+
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      socket.off("dbChange");
+    };
+  }, []);
+
+
   useEffect(() => {
     channel.onmessage = (event) => {
       if (event.data === "nuevoDatoCreado") {
