@@ -61,7 +61,7 @@ const Servicio = ({
 
     // Limpiar el evento al desmontar el componente
     return () => {
-      socket.off("dbChange");
+      socket.off("dbChange3");
     };
   }, []);
 
