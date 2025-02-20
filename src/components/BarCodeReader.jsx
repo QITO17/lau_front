@@ -73,7 +73,7 @@ const BarCodeReader = ({ getTurnos }) => {
               usuario: "CONDUCTOR [DESENTURNO]",
               telefono: "6043220707",
               conductor: movil,
-              direccion "ESTACIONAMIENTO ACOPIO LAURELES",
+              direccion: "ESTACIONAMIENTO ACOPIO LAURELES",
               barrio: "Laureles",
               usrgraba: "Dev",
             };
