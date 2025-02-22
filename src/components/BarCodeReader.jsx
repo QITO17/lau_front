@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Toaster, toast } from "sonner";
 
 const BarCodeReader = ({ getTurnos }) => {
-  const [barcode, setBarcode] = useState("");
+  const [barcode, setBarcode] = useState(""); 
   // const [bloqueado, setBloqueado] = useState("");
   useEffect(() => {
     const handleKeyDown = async (event) => {
