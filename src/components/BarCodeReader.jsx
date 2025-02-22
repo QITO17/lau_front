@@ -58,13 +58,7 @@ const BarCodeReader = ({ getTurnos }) => {
             const movil = barcode.substring(4, 8);
             let fecha;
             const fechaActual = new Date().toISOString().split('T')[0];
-           // const res2 = await axios.delete(
-           //   `https://laureles-ap.onrender.com/api/v1/turno/turno/${cedconduce}`,
-           //   {
-           //     movil,
-           //     cedconduce,
-           //   }
-           // );
+            const res2 = await axios.delete(`https://laureles-ap.onrender.com/api/v1/turno/turno/${movil}`);
          const dataQuemada = {
               textos_completos: "0",
               linea: "6043220707",
