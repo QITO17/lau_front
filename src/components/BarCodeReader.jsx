@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Toaster, toast } from "sonner";
 
-const BarCodeReader = ({ getTurnos }) => {
+const BarCodeReader = ({ getTurnos, getServices }) => {
   const [barcode, setBarcode] = useState(""); 
   // const [bloqueado, setBloqueado] = useState("");
   useEffect(() => {
@@ -78,6 +78,7 @@ const BarCodeReader = ({ getTurnos }) => {
               .catch((err) => console.log(err));
             setBarcode("");
             getTurnos();
+            getServices();
             // Muestra el mensaje de error al usuario
             console.log(error);
           } else {
