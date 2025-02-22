@@ -179,6 +179,13 @@ const Servicio2 = ({
       .catch((err) => console.log(err));
   };
 
+  const getServices = async () => {
+    await axios
+      .get(`https://laureles-ap.onrender.com/api/v1/servicio/servicio`)
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  };
+
   // console.log(data.Turnos[data.Turnos.length - 1]);
   // Función para abrir el modal
   const openModal = () => {
@@ -274,7 +281,7 @@ const Servicio2 = ({
 
   return (
     <div className="flex">
-      <BarCodeReader getTurnos={getTurnos} />
+      <BarCodeReader getTurnos={getTurnos} getServices={getServices} />
       <div className=" ">
         <div className="w-full max-w-[550px]">
           <form
