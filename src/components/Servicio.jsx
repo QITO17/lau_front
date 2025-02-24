@@ -205,7 +205,9 @@ const Servicio = ({
     try {
       res13 = await axios.get(`https://laureles-ap.onrender.com/api/v1/turno/turno`);
 
-      data.movil = res13.data?.Turnos[0].movil;
+      data.movil = movil1 === '' ? data.movil = res13.data?.Turnos[0].movil: movil1
+      setMovil1('')
+      //data.movil = res13.data?.Turnos[0].movil;
     } catch (error) {
       alert("No hay nadie enturnado");
     }
@@ -230,6 +232,7 @@ const Servicio = ({
     }
 
 
+    
     data.conductor = res12.data.turnos.cedconduce;
 
 
@@ -401,18 +404,18 @@ const Servicio = ({
             </div>
 
             <div className="mb-3">
-              {/* <label className="mb-3 block text-base font-medium text-[#07074D]">
-                Nombre Usuario
+              <label className="mb-3 block text-base font-medium text-[#07074D]">
+                Movil
               </label>
               <input
                 required
-                value={nombreUsuario}
-                onChange={(e) => setnombreUsuario(e.target.value)}
+                value={movil1}
+                onChange={(e) => setMovil1(e.target.value)}
                 type="text"
-                name="Nombre Usuario"
-                placeholder="Nombre Usuario"
+                name="Movil"
+                placeholder="Movil"
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-              /> */}
+              />
             </div>
 
             <div className="flex gap-3 ">
