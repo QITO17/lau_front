@@ -408,7 +408,6 @@ const Servicio = ({
                 Movil
               </label>
               <input
-                required
                 value={movil1}
                 onChange={(e) => setMovil1(e.target.value)}
                 type="text"
