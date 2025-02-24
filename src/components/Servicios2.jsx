@@ -22,7 +22,10 @@ const Servicio2 = ({
   console.log('Ohhh si, somos lo mejor de lo mejor')
 
   const imprimir = (data) => {
-    console.log('Me llego data ', data)
+    console.log('Me llego data ', data.creado.linea)
+    if(data.creado.linea == '6043220707'){
+      return;
+    }
     const fechaActual = new Date();
     const fechaFormateada = fechaActual.toISOString().split('T')[0];
     let fecha = fechaFormateada;
