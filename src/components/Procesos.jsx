@@ -67,6 +67,24 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
     limpiar();
   };
 
+   const validBloq = async () => {
+
+    let respuesta;
+
+    await axios
+      .get(`http://localhost:3001/api/v1/bloq/bloqueos/${movil}`)
+      .then((res) => {
+        respuesta = confirm('Ya está bloqueado, ¿desea desbloquearlo?')        
+      })
+      .catch((err) => {
+        console.clear();        
+      });
+
+      if(respuesta) await axios.delete(`http://localhost:3001/api/v1/bloq/bloqueos/${movil}`)
+
+  };
+
+
   return (
     <>
       <Toaster position="top-right" richColors />
@@ -113,6 +131,7 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
                             value={movil}
                             required
                             onChange={(e) => setMovil(e.target.value)}
+                            onBlur={validBloq}
                             type="text"
                             id="Movil"
                             className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
@@ -169,9 +188,9 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
                             <option value="motivo19">Llevarse el servicio</option>
                             <option value="motivo20">No prestar servicio de VALES</option>
 
-                            <option value="motivo17">No Cambiar aceite en CTM</option>
-                            <option value="motivo18">Orden Gerencia / Consejo</option>
-                            <option value="motivo19">NO DESENTURNARSE</option>
+                            <option value="motivo21">No Cambiar aceite en CTM</option>
+                            <option value="motivo22">Orden Gerencia / Consejo</option>
+                            <option value="motivo23">NO DESENTURNARSE</option>
                           </select>
                         </div>
 
