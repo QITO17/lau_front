@@ -81,7 +81,7 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
       });
 
       if(respuesta) await axios.delete(`https://laureles-ap.onrender.com/api/v1/bloq/bloqueos/${movil}`)
-
+      alert('Movil desbloqueado')
   };
 
 
