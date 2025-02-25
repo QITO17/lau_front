@@ -72,7 +72,7 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
     let respuesta;
 
     await axios
-      .get(`http://localhost:3001/api/v1/bloq/bloqueos/${movil}`)
+      .get(`https://laureles-ap.onrender.com/api/v1/bloq/bloqueos/${movil}`)
       .then((res) => {
         respuesta = confirm('Ya está bloqueado, ¿desea desbloquearlo?')        
       })
@@ -80,7 +80,7 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
         console.clear();        
       });
 
-      if(respuesta) await axios.delete(`http://localhost:3001/api/v1/bloq/bloqueos/${movil}`)
+      if(respuesta) await axios.delete(`https://laureles-ap.onrender.com/api/v1/bloq/bloqueos/${movil}`)
 
   };
 
