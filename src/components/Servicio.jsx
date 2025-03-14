@@ -267,7 +267,7 @@ const Servicio = ({
             .post("https://laureles-ap.onrender.com/api/v1/clientes/clientes", {
               clientes_codigo: '03',
               telefono: linea,
-              nombre: 'Luis peralta',
+              nombre: usuario,
               direccion,
               barrio: 'Laureles',
               notas: 'Sin Observaciones'
