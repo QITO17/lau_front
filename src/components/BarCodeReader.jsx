@@ -37,7 +37,7 @@ const BarCodeReader = ({ getTurnos }) => {
           if(bloqueado == 200){
              toast.error("Mensaje", {
                description: 'NOVEDAD ADMINISTRATIVA',
-               duration: 3000,
+               duration: 1000,
              });
             setBarcode("");
             setBloqueado("");
