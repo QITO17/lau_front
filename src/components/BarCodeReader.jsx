@@ -4,7 +4,7 @@ import { Toaster, toast } from "sonner";
 
 const BarCodeReader = ({ getTurnos }) => {
   const [barcode, setBarcode] = useState(""); 
-  // const [bloqueado, setBloqueado] = useState("");
+  const [bloqueado, setBloqueado] = useState("");
   useEffect(() => {
     const handleKeyDown = async (event) => {
       let bloqueado;
@@ -35,10 +35,12 @@ const BarCodeReader = ({ getTurnos }) => {
           
 
           if(bloqueado == 200){
-          //   toast.error("Mensaje", {
-          //     description: 'NOVEDAD ADMINISTRATIVA',
-          //   });
-          setBarcode("");
+             toast.error("Mensaje", {
+               description: 'NOVEDAD ADMINISTRATIVA',
+               duration: 3000,
+             });
+            setBarcode("");
+            setBloqueado("");
              return
            } 
           const res1 = await axios.post(
