@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 
 import { useEffect, useState } from "react";
 import ScrollableTable from "./TableServices2";
@@ -6,6 +6,7 @@ import axios from "axios";
 import { format } from "date-fns";
 import BarCodeReader from "./BarCodeReader";
 import { io } from 'socket.io-client';
+import { toast } from "sonner";
 const socket = io('https://laureles-ap.onrender.com', {
   withCredentials: true
 }); // URL del servidor
@@ -14,10 +15,8 @@ const Servicio2 = ({
   servicios,
   setServicios,
   onUpdateServicios,
-  handleUpdateMoviles,
+  
 }) => {
-  // Estado para controlar la visibilidad del modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState("");
   const channel = new BroadcastChannel("mi-canal");
 
@@ -140,7 +139,7 @@ const Servicio2 = ({
   }, []);
 
   useEffect(() => {
-    channel.onmessage = async (event) => {
+    channel.onmessage = async () => {
       await axios
         .get("https://laureles-ap.onrender.com/api/v1/servicio/servicio")
         .then((res) => setServicios(res.data))
@@ -173,29 +172,15 @@ const Servicio2 = ({
       .catch((err) => console.log(err));
   };
 
-  // console.log(data.Turnos[data.Turnos.length - 1]);
-  // Función para abrir el modal
-  const openModal = () => {
-    setIsModalOpen(true);
-    handleUpdateMoviles();
-  };
 
-  // Función para cerrar el modal
-  const closeModal = () => setIsModalOpen(false);
 
-  const [isModalOpen2, setIsModalOpen2] = useState(false);
 
-  // Función para abrir el modal
-  const openModal2 = () => setIsModalOpen2(true);
-
-  // Función para cerrar el modal
-  const closeModal2 = () => setIsModalOpen2(false);
 
   const [linea, setLinea] = useState("");
   const [movil1, setMovil1] = useState("");
   const [usuario, setUsuario] = useState("");
   const [direccion, setDireccion] = useState("");
-  const [barrio, setbarrio] = useState("");
+  const [barrio] = useState("");
 
   const limpiar = () => {
     setLinea("");
@@ -232,7 +217,8 @@ const Servicio2 = ({
         `https://laureles-ap.onrender.com/api/v1/turno/turno/${data.movil}`
       );
     } catch (error) {
-      alert("El movil no esta en turno");
+      toast.error("Error al obtener el turno.");
+      console.error("Error al obtener el turno:", error);
       return;
     }
 
@@ -242,7 +228,8 @@ const Servicio2 = ({
       );
       console.log("Elimine, ", res1);
     } catch (error) {
-      alert("El movil no esta en turno");
+      toast.error("Error al eliminar el turno.");
+      console.error("Error al eliminar el turno:", error);
       return;
     }
 

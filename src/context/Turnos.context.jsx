@@ -1,5 +1,5 @@
 // src/GlobalContext.js
-import React, { createContext, useContext, useState } from 'react';
+import  { createContext, useContext, useState } from 'react';
 
 // Crea el contexto
 const GlobalContext = createContext();

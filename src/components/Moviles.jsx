@@ -1,5 +1,4 @@
 import Logo from "/public/ctm2.jpeg";
-/* eslint-disable react/prop-types */
 
 
 const Moviles = ({ isModalOpen, openModal, closeModal, MovilesState }) => {

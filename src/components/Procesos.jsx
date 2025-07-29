@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Logo from "/public/ctm2.jpeg";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
 
 const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
   const [movil, setMovil] = useState("");
-  const [conductor, setConductor] = useState("");
+  const [ setConductor] = useState("");
   const [motivo, setMotivo] = useState("");
   const [fechaInicia, setFechaInicia] = useState("");
   const [fechaFinaliza, setFechaFinaliza] = useState("");
@@ -19,16 +19,8 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
     setFechaFinaliza("");
   };
 
-  const handleSubmit = async () => {
-    const fechaInicioDate = new Date(fechaInicia);
-    const fechaFinalizaDate = new Date(fechaFinaliza);
-    const diferenciaEnMilisegundos = fechaFinalizaDate - fechaInicioDate;
-    const diferenciaEnDias = Math.floor(
-      diferenciaEnMilisegundos / (1000 * 60 * 60 * 24)
-    );
-    console.log(`Diferencia en días: ${diferenciaEnDias}`);
+  const handleSubmit = async () => {  
 
-    const token = localStorage.getItem("token");
     let dataCrearBloq;
 
     await axios
@@ -57,7 +49,7 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
    
     await axios
       .post("https://laureles-ap.onrender.com/api/v1/bloq/bloqueos", dataCrearBloq)
-      .then((res) => {
+      .then(() => {
         toast.success("Mensaje", {
           description: `Bloqueado con éxito`,
         });
@@ -73,10 +65,10 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
 
     await axios
       .get(`https://laureles-ap.onrender.com/api/v1/bloq/bloqueos/${movil}`)
-      .then((res) => {
+      .then(() => {
         respuesta = confirm('Ya está bloqueado, ¿desea desbloquearlo?')        
       })
-      .catch((err) => {
+      .catch(() => {
         console.clear();        
       });
 
