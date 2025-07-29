@@ -100,7 +100,7 @@ const ActualizarDireccion = () => {
           <div className="space-y-4">
             {/* Input celular */}
             <input
-              type="text"
+              type="number"
               placeholder="Número de celular"
               className="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               value={celular}
