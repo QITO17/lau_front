@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+
+import  { useEffect, useState } from "react";
 import ScrollableTable from "./TableServices";
 import Moviles from "./Moviles";
 import Procesos from "./Procesos";
@@ -8,9 +10,9 @@ import { Toaster, toast } from "sonner";
 import SweetAlert2 from "react-sweetalert2";
 import { io } from "socket.io-client";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import ActualizarDireccion from "./ActualizarDireccion";
 const socket = io("https://laureles-ap.onrender.com", {
-  withCredentials: true
+  withCredentials: true,
 }); // URL del servidor
 
 const Servicio = ({
@@ -23,8 +25,7 @@ const Servicio = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [swalProps, setSwalProps] = useState({});
   const channel = new BroadcastChannel("mi-canal");
-  const [messages, setMessages] = useState([]);
-  const navigate = useNavigate();
+  const [ setMessages] = useState([]);
   const actualizaInfoSockets = async () => {
     await axios
       .get("https://laureles-ap.onrender.com/api/v1/servicio/servicio")
@@ -51,7 +52,7 @@ const Servicio = ({
     };
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     socket.on("dbChange3", (data) => {
       console.log("Cambio en la base de datos:", data);
       //setServicios(servicios)
@@ -64,7 +65,6 @@ const Servicio = ({
       socket.off("dbChange3");
     };
   }, []);
-
 
   useEffect(() => {
     channel.onmessage = (event) => {
@@ -90,9 +90,6 @@ const Servicio = ({
     handleUpdateMoviles();
   };
 
-  const redirige = () => {
-     navigate("/principal");
-  }
   // Función para cerrar el modal
   const closeModal = () => setIsModalOpen(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
@@ -104,75 +101,10 @@ const Servicio = ({
   const [movil1, setMovil1] = useState("");
   const [usuario, setUsuario] = useState("");
   const [direccion, setDireccion] = useState("");
-  const [barrio, setbarrio] = useState("Laureles");
+  const [barrio] = useState("Laureles");
   // const [nombreUsuario, setnombreUsuario] = useState("");
 
-  const imprimir = (data) => {
-    console.log('Soy data ', data)
-    const fechaActual = new Date();
-    const fechaFormateada = fechaActual.toISOString().split('T')[0];
-    let fecha = fechaFormateada;
-    const fechaHora = new Date();
-    const horaFormateada = fechaHora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    let hora = horaFormateada
-    console.log('Holita')
-    console.log('Hola soy hora ', hora)
-    console.log('Hola soy hora ', fecha)
-    const payload =
-      `{\"nombreImpresora\":\"Gereri2\",\"serial\":\"MGE4NTNlM2VfXzIwMjUtMDYtMTNfXzIwMjUtMDctMTMjIyNPVnNwYm8wU05YNjdvK3p0emdVNlFPRUJweEgyK0c5d2RxM25aUHZXNzlKSmlCQTY5OG9XN1hrVTVBMERlSE15SUhlaUtOdkxLZUQxM3oyQStZTmduN2NscUtxNjlHWFg1clBURktxanVheTZVQUdtUm40QkpxWlFUMmYxR1drcjlna25Udi9uRGJSbUR3Q2szSFNrSXVwOFNhS0tiQkc5dFYvQ1lreHhvKzVEZDlyUEpMdlFLVEdwQ2o1VVRlWWhmam1NbE5BM0ovajVvaElERUd1V21lVlhPMU8vTUZ0b2N6VjJseGFhT0lXR0daamxUSlNjSzgvNk5LOWVwL1p5bTNzN3ZOMWhWcjloT2NsakI1Tkg2N1hMU05MUDVVQ2V3QkZacTA2T0dIMEtybytwS2h1WFExdktTZUVZNG1CVHNFOWIwc3pSNFNwQ0ZtRGtLNytyMm1jWk9hU3ZTakErK0dteGNTUjNZOTNSV2l4TGtXcmp0ak9QNzZXRTRvTVNra3FJT2ZFMXViMjAwaWVTV1hWbm9NckVjY1JBVkNaQnlYdTdtdXgxMUlTY1R1SGVueWVDZlpscGJTNGowL0lSeW00WXBqcHlyaElSUjBhMG1jRzViaVJ2d0dqSDEwdlc4cUU0b200WW5qbmIrYUlmOWRncThnZ1VSVzN0d3VNcnRBOFVseVJ2VzRtY05pbzdscEZNVDRUb0JEeEtha3NxZEgrbERNdzNZV1V2cjBReG82elFPWXp1TG9DbUNpOTNLYjNHRmJIY1IvWFpyS3k1cmd4aVJleHMxWGRrUGE5aDJORi84WUNlczdNRlZic1dlMEhJMnVGRXRjSUVMZGxsb0JsTnBtVWdaRnozMkdZTHlNQktOd3BDbUVKSTcrMnZuRXo2WmVUTVRaRT0=\",\"operaciones\":[{\"nombre\":\"Iniciar\",\"argumentos\":[]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,2]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"CTM COOTRANSMEDE\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"Acopio Exclusivo\\n Sector Laureles\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"TextoSegunPaginaDeCodigos\",\"argumentos\":[2,\"CP850\",\"Su móvil seguro\"]},{\"nombre\":\"Feed\",\"argumentos\":[2]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,2]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"${data.creado.movil}\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"Fecha: ${fecha}\\nHora: ${hora}\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[2]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,2]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"${data.creado.direccion} \\n\\n\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[1,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"PQRS: pqrs@ctmcootransmede.com\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"\\n\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"TextoSegunPaginaDeCodigos\",\"argumentos\":[2,\"cp850\",\"Servicio de Taxi\\n Via WhatsApp\\n\\n\"]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[3,2]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"574 322 07 07\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Iniciar\",\"argumentos\":[]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"ImprimirCodigoQr\",\"argumentos\":[\"https://wa.me/message/DGQQZZ3QYHMXN1?src=qr\",200,1,0]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[1,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"\\n\\n\\n\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Corte\",\"argumentos\":[1]}]}
-`;
 
-    fetch("http://localhost:8000/imprimir", {
-      method: "POST",
-      body: payload,
-    }) 
-      .then((respuesta) => respuesta.json())
-      .then((respuesta) => {
-        if (respuesta === true) {
-          // Éxito
-          console.log("Impreso correctamente");
-        } else {
-          // Error (el mensaje de error está en "respuesta")
-          console.log("Error con el plugin: " + respuesta);
-        }
-      })
-      .catch((e) => {
-        console.log(
-          "Error haciendo petición. Verifica que el plugin se está ejecutando. El error dice: " +
-          e
-        );
-      });
-  };
-  // const imprimir = (data) => {
-  //   console.log('Me llego data ', data)
-  //   const fechaActual = new Date();
-  //   const fechaFormateada = fechaActual.toISOString().split('T')[0];
-  //   let fecha = fechaFormateada;
-  //   const fechaHora = new Date();
-  //   const horaFormateada = fechaHora.toLocaleTimeString();
-  //   let hora = horaFormateada
-  //   console.log('Holita')
-  //   console.log('Hola soy hora ', hora)
-  //   console.log('Hola soy hora ', fecha)
- 
-  //   fetch("http://10.10.1.208:8000/imprimir", {
-  //     method: "POST",
-  //     body: payload,
-  //   })
-  //     .then(respuesta => respuesta.json())
-  //     .then(respuesta => {
-  //       if (respuesta === true) {
-  //         // Éxito
-  //         console.log("Impreso correctamente");
-  //       } else {
-  //         // Error (el mensaje de error está en "respuesta")
-  //         console.log("Error con el plugin: " + respuesta);
-  //       }
-  //     })
-  //     .catch(e => {
-  //       console.log("Error haciendo petición. Verifica que el plugin se está ejecutando. El error dice: " + e);
-  //     });
-  // }
   const limpiar = () => {
     setLinea("");
     setMovil1("");
@@ -202,13 +134,16 @@ const Servicio = ({
     let res13;
 
     try {
-      res13 = await axios.get(`https://laureles-ap.onrender.com/api/v1/turno/turno`);
+      res13 = await axios.get(
+        `https://laureles-ap.onrender.com/api/v1/turno/turno`
+      );
 
-      data.movil = movil1 === '' ? data.movil = res13.data?.Turnos[0].movil: movil1
-      setMovil1('')
+      data.movil =
+        movil1 === "" ? (data.movil = res13.data?.Turnos[0].movil) : movil1;
+      setMovil1("");
       //data.movil = res13.data?.Turnos[0].movil;
     } catch (error) {
-      alert("No hay nadie enturnado");
+      alert("No hay nadie enturnado", error);
     }
 
     try {
@@ -216,7 +151,7 @@ const Servicio = ({
         `https://laureles-ap.onrender.com/api/v1/turno/turno/${data.movil}`
       );
     } catch (error) {
-      alert("El movil no esta en turno");
+      alert("El movil no esta en turno," + error);
       return;
     }
 
@@ -226,25 +161,20 @@ const Servicio = ({
       );
       console.log("Elimine, ", res1);
     } catch (error) {
-      alert("El movil no esta en turno");
+      alert("El movil no esta en turno: ", error);
       return;
     }
 
-
-    
     data.conductor = res12.data.turnos.cedconduce;
-
 
     await axios
       .get("https://laureles-ap.onrender.com/api/v1/servicio/servicio")
       .then((res) => {
         channel.postMessage(res.data);
         setServicios(res.data);
-
       })
       .catch((err) => console.log(err));
 
-  
     toast("Información Servicio", {
       description: `Movil: ${data.movil}, Linea Usuario: ${data.linea}, Usuario Graba: ${data.usrgraba}, Dirección: ${data.direccion}`,
     });
@@ -264,13 +194,12 @@ const Servicio = ({
           // Realizar el POST solo si se recibe un 404
           axios
             .post("https://laureles-ap.onrender.com/api/v1/clientes/clientes", {
-              clientes_codigo: '03',
+              clientes_codigo: "03",
               telefono: linea,
               nombre: usuario,
               direccion,
-              barrio: 'Laureles',
-              notas: 'Sin Observaciones'
-
+              barrio: "Laureles",
+              notas: "Sin Observaciones",
             })
             .then((postRes) => {
               console.log("POST exitoso:", postRes);
@@ -284,12 +213,12 @@ const Servicio = ({
       });
 
     //imprimir(data);
-  
+
     handleClick();
-   
+
     // console.log("Cambie el estado: ", state)
     limpiar();
-   
+
     await axios
       .post("https://laureles-ap.onrender.com/api/v1/servicio/servicio", data)
       .then((res) => console.log("hey ", res.data))
@@ -299,17 +228,19 @@ const Servicio = ({
   };
 
   const getAllFields = async (e) => {
-    console.log(e.target.value)
-    if (e.target.value !== '') {
-      await axios.get(`https://laureles-ap.onrender.com/api/v1/clientes/clientes/${e.target.value}`)
-        .then(res => {
-          console.log(res.data.Cliente)
+    console.log(e.target.value);
+    if (e.target.value !== "") {
+      await axios
+        .get(
+          `https://laureles-ap.onrender.com/api/v1/clientes/clientes/${e.target.value}`
+        )
+        .then((res) => {
+          console.log(res.data.Cliente);
           const { nombre, direccion } = res.data.Cliente;
           setUsuario(nombre);
-          setDireccion(direccion)
-
+          setDireccion(direccion);
         })
-        .catch(err => console.log('404 Por nuevo usuario'))//ht71673790
+        .catch((err) => console.log("404 Por nuevo usuario", err)); //ht71673790
     }
   };
 
@@ -334,11 +265,11 @@ const Servicio = ({
         }}
       />
       <Toaster position="top-right" richColors />
-      <div className=" ">
+      <div className="border-green-500 border min-w-[300px]">
         <div className=" w-full max-w-[550px]">
           <form
             onSubmit={handleSubmit}
-            className="flex gap-1 h-screen border-green-500 border p-8 flex-col max-w-96"
+            className="flex gap-1 h-screen  p-6 flex-col max-w-96"
           >
             <div className="mb-3">
               <label className="mb-3 block text-base font-medium text-[#07074D]">
@@ -416,7 +347,7 @@ const Servicio = ({
               />
             </div>
 
-            <div className="flex gap-3 ">
+            <div className="grid grid-cols-2 gap-2 mt-3">
               <button
                 type="submit"
                 className="bg-blue-500 text-white rounded-md px-2 py-1 hover:bg-blue-600 focus:outline-none transition-colors"
@@ -430,17 +361,20 @@ const Servicio = ({
               >
                 Limpiar
               </button>
-            </div>
-            <div className="flex gap-3 pt-3 flex-wrap">
-              <Link to="/informes"  className="bg-green-500 text-white rounded-md px-2 py-1 hover:bg-green-600 focus:outline-none transition-colors">Informes</Link>
-               <Moviles
-                
+            
+              <Link
+                to="/informes"
+                className="bg-green-500 text-white rounded-md text-center px-2 py-1 hover:bg-green-600 focus:outline-none transition-colors"
+              >
+                Informes
+              </Link>
+              <Moviles
                 MovilesState={MovilesState}
                 isModalOpen={isModalOpen}
                 setIsModalOpen={setIsModalOpen}
                 openModal={openModal}
                 closeModal={closeModal}
-              /> 
+              />
               <button
                 type="button" // Añadir type="button"
                 className="bg-green-500 text-white rounded-md px-2 py-1 hover:bg-green-600 focus:outline-none transition-colors"
@@ -452,20 +386,28 @@ const Servicio = ({
                   closeModal2={closeModal2}
                 />
               </button>
-              <Link to="/conductores"  className="bg-green-500 text-white rounded-md px-2 py-1 hover:bg-green-600 focus:outline-none transition-colors">Conductores</Link>
-
+              <Link
+                to="/conductores"
+                className="bg-green-500 text-white text-center rounded-md px-2 py-1 hover:bg-green-600 focus:outline-none transition-colors"
+              >
+                Conductores
+              </Link>
+              <ActualizarDireccion />
             </div>
+            
 
-            {/* <div className="flex gap-3 pt-3">
-                isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} openModal={openModal} closeModal={closeModal} />
-            </div> */}
-            {/* <span className=" pt-2 font-bold text-lg">Moviles <span className=" text-green-500 ">20</span></span> */}
           </form>
+          
         </div>
+        
+        
       </div>
       <ScrollableTable servicios={servicios} />
+      
+      
     </div>
+    
   );
-};
+}
 
 export default Servicio;

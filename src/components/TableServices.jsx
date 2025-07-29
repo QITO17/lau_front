@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 // src/components/ScrollableTable.jsx
 
-import React from 'react';
 import Logo from "/public/ctm2.jpeg";
 import Logo2 from "/public/tolan2.jpg";
 
 
 const ScrollableTable = ({ servicios }) => {
+  
    
   return (
     <div className="container mx-auto p-2 ">
@@ -21,11 +22,11 @@ const ScrollableTable = ({ servicios }) => {
         <table className="min-w-full text-left border-collapse">
           <thead className="bg-green-500 text-white">
             <tr>
-              <th className="p-4 w-1/3">Telefono</th>
+              <th className="p-4 w-[80px]">Telefono</th>
               <th className="p-4 w-1/3">Usuario</th>
               <th className="p-4 w-1/3">Dirección</th>
-              <th className="p-4 w-1/3">Movil</th>
-              <th className="p-4 w-1/3">Barrio</th>
+              <th className="p-4 w-[50px]">Movil</th>
+              <th className="p-4 w-[80px]">Barrio</th>
               <th className="p-4 w-1/5">Fecha</th>
             </tr>
           </thead>
@@ -33,11 +34,11 @@ const ScrollableTable = ({ servicios }) => {
             {servicios.Servicios?.map((item, index) => (
               <tr key={index} className="border-b">
               
-                <td className="p-4 w-1/4">{item.telefono}</td>
+                <td className="p-4 w-[80px]">{item.telefono}</td>
                 <td className="p-4 w-1/4">{item.usuario}</td>
                 <td className="p-4 w-1/4">{item.direccion}</td>
-                <td className="p-4 w-1/4">{item.movil}</td>
-                <td className="p-4 w-1/4">{item.barrio}</td>
+                <td className="p-4 w-[50px]">{item.movil}</td>
+                <td className="p-4 w-[80px]">{item.barrio}</td>
                 <td className="p-4 w-1/4">{item.fecha}</td>
               </tr>
             ))}
