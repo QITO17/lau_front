@@ -1,17 +1,8 @@
 import Logo from "/public/ctm2.jpeg";
 import Logo2 from "/public/tolan2.jpg";
 
-const formatDate = (dateString) => {
-  const options = {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    timeZone: "UTC", // Asegura que la fecha no cambie por la zona horaria
-  };
-  return new Date(dateString).toLocaleDateString("es-ES", options);
-};
-
 const ScrollableTable = ({ servicios }) => {
+  console.log(servicios);
   return (
     <div className="container p-4  ">
       {/* Header Section */}
@@ -62,29 +53,44 @@ const ScrollableTable = ({ servicios }) => {
               </tr>
             </thead>
             <tbody className="bg-gray-50 divide-y divide-gray-200">
-              {servicios.Servicios?.map((item, index) => (
-                <tr
-                  key={index}
-                  className="hover:bg-gray-100 transition-colors duration-150 even:bg-gray-50 odd:bg-white"
-                >
-                  <td className="px-2 py-4 whitespace-nowrap  font-medium text-gray-900">
-                    {item.telefono}
-                  </td>
-                  <td className="px-2 py-4 whitespace-nowrap  text-gray-800">
-                    {item.usuario}
-                  </td>
-                  <td className="px-2 py-4  text-gray-800">{item.direccion}</td>
-                  <td className="px-2 py-4 whitespace-nowrap  text-gray-800">
-                    {item.movil}
-                  </td>
-                  <td className="px-2 py-4 whitespace-nowrap  text-gray-800">
-                    {item.barrio}
-                  </td>
-                  <td className="px-2 py-4 whitespace-nowrap  text-gray-800">
-                    {formatDate(item.fecha)}
-                  </td>
-                </tr>
-              ))}
+              {servicios.Servicios?.map((item, index) => {
+                const newDate = new Date(item.createdAt).toLocaleString(
+                  "es-ES",
+                  {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit",
+                  }
+                );
+                return (
+                  <tr
+                    key={index}
+                    className="hover:bg-gray-100 transition-colors duration-150 even:bg-gray-50 odd:bg-white"
+                  >
+                    <td className="px-2 py-4 whitespace-nowrap  font-medium text-gray-900">
+                      {item.telefono}
+                    </td>
+                    <td className="px-2 py-4 whitespace-nowrap  text-gray-800">
+                      {item.usuario}
+                    </td>
+                    <td className="px-2 py-4  text-gray-800">
+                      {item.direccion}
+                    </td>
+                    <td className="px-2 py-4 whitespace-nowrap  text-gray-800">
+                      {item.movil}
+                    </td>
+                    <td className="px-2 py-4 whitespace-nowrap  text-gray-800">
+                      {item.barrio}
+                    </td>
+                    <td className="px-2 py-4 whitespace-nowrap  text-gray-800">
+                      {newDate}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

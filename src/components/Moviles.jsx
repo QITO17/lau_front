@@ -8,9 +8,9 @@ const Moviles = ({ isModalOpen, openModal, closeModal, MovilesState }) => {
       <button
         type="button"
         onClick={openModal}
-        className="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg px-2 py-1 transition-colors shadow-md"
+        className="bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg px-2 py-1 transition-colors shadow-md"
       >
-        Ver Móviles
+        Móviles
       </button>
 
       {/* Modal */}
