@@ -20,10 +20,8 @@ const Servicio2 = ({
   const [data, setData] = useState("");
   const channel = new BroadcastChannel("mi-canal");
 
-  console.log('Ohhh si, somos lo mejor de lo mejor')
 
   const imprimir = (data) => {
-    console.log('Me llego data ', data.creado.linea)
     if(data.creado.linea == '6043220707'){
       return;
     }
@@ -34,9 +32,6 @@ const Servicio2 = ({
     const fechaHora = new Date();
     const horaFormateada = fechaHora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     let hora = horaFormateada
-    console.log('Holita')
-    console.log('Hola soy hora ', hora)
-    console.log('Hola soy hora ', fecha)
     const payload =
       `{\"nombreImpresora\":\"Gereri2\",\"serial\":\"MGE4NTNlM2VfXzIwMjUtMDYtMTNfXzIwMjUtMDctMTMjIyNPVnNwYm8wU05YNjdvK3p0emdVNlFPRUJweEgyK0c5d2RxM25aUHZXNzlKSmlCQTY5OG9XN1hrVTVBMERlSE15SUhlaUtOdkxLZUQxM3oyQStZTmduN2NscUtxNjlHWFg1clBURktxanVheTZVQUdtUm40QkpxWlFUMmYxR1drcjlna25Udi9uRGJSbUR3Q2szSFNrSXVwOFNhS0tiQkc5dFYvQ1lreHhvKzVEZDlyUEpMdlFLVEdwQ2o1VVRlWWhmam1NbE5BM0ovajVvaElERUd1V21lVlhPMU8vTUZ0b2N6VjJseGFhT0lXR0daamxUSlNjSzgvNk5LOWVwL1p5bTNzN3ZOMWhWcjloT2NsakI1Tkg2N1hMU05MUDVVQ2V3QkZacTA2T0dIMEtybytwS2h1WFExdktTZUVZNG1CVHNFOWIwc3pSNFNwQ0ZtRGtLNytyMm1jWk9hU3ZTakErK0dteGNTUjNZOTNSV2l4TGtXcmp0ak9QNzZXRTRvTVNra3FJT2ZFMXViMjAwaWVTV1hWbm9NckVjY1JBVkNaQnlYdTdtdXgxMUlTY1R1SGVueWVDZlpscGJTNGowL0lSeW00WXBqcHlyaElSUjBhMG1jRzViaVJ2d0dqSDEwdlc4cUU0b200WW5qbmIrYUlmOWRncThnZ1VSVzN0d3VNcnRBOFVseVJ2VzRtY05pbzdscEZNVDRUb0JEeEtha3NxZEgrbERNdzNZV1V2cjBReG82elFPWXp1TG9DbUNpOTNLYjNHRmJIY1IvWFpyS3k1cmd4aVJleHMxWGRrUGE5aDJORi84WUNlczdNRlZic1dlMEhJMnVGRXRjSUVMZGxsb0JsTnBtVWdaRnozMkdZTHlNQktOd3BDbUVKSTcrMnZuRXo2WmVUTVRaRT0=\",\"operaciones\":[{\"nombre\":\"Iniciar\",\"argumentos\":[]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,2]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"CTM COOTRANSMEDE\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"Acopio Exclusivo\\n Sector Laureles\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"TextoSegunPaginaDeCodigos\",\"argumentos\":[2,\"CP850\",\"Su móvil seguro\"]},{\"nombre\":\"Feed\",\"argumentos\":[2]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,2]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"${data.creado.movil}\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"Fecha: ${fecha}\\nHora: ${hora}\\n\\n\ ${nombreUsuario}"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[2]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,2]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"${data.creado.direccion} \\n\\n\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[1,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"PQRS: pqrs@ctmcootransmede.com\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[2,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"\\n\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"TextoSegunPaginaDeCodigos\",\"argumentos\":[2,\"cp850\",\"Servicio de Taxi\\n Via WhatsApp\\n\\n\"]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[3,2]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[true]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"300 653 52 51\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Iniciar\",\"argumentos\":[]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"ImprimirCodigoQr\",\"argumentos\":[\"https://wa.me/573006535251\",200,1,0]},{\"nombre\":\"EstablecerTamañoFuente\",\"argumentos\":[1,1]},{\"nombre\":\"EstablecerEnfatizado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerAlineacion\",\"argumentos\":[1]},{\"nombre\":\"EstablecerSubrayado\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionAlReves\",\"argumentos\":[false]},{\"nombre\":\"EstablecerImpresionBlancoYNegroInversa\",\"argumentos\":[false]},{\"nombre\":\"EstablecerRotacionDe90Grados\",\"argumentos\":[false]},{\"nombre\":\"EscribirTexto\",\"argumentos\":[\"\\n\\n\\n\"]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Feed\",\"argumentos\":[1]},{\"nombre\":\"Corte\",\"argumentos\":[1]}]}`;
     // fetch("http://localhost:8000/imprimir", {
@@ -70,11 +65,6 @@ const Servicio2 = ({
   useEffect(() => {
 
     socket.on('dbChange2', async (data) => {
-      console.log('Cambio en la base de datos XDDDDDDDDDDDDDDDDDDDD:', data);
-      // axios.delete(
-      //   `https://laureles-ap.onrender.com/api/v1/turno/turno/${data.creado.movil}`
-      // ).then(res => console.log('Ya borre en sockets', res))
-      // .catch(err => console.log(err, 'No borre en sockets'))
 
 
       await axios
@@ -93,7 +83,6 @@ const Servicio2 = ({
       await axios
       .get(`https://laureles-ap.onrender.com/api/v1/clientes/clientes/${numUser}`)
       .then((res) => {
-        console.log('Voy a pasar valor')
         data.creado.textos_completos = res.data.Cliente.nombre;
       })
       .catch((err) => console.log(err));
@@ -111,7 +100,6 @@ const Servicio2 = ({
    useEffect(() => {
 
     socket.on('dbChange4', async (data) => {
-      console.log('Cambio en la base de datos XDDDDDDDDDDDDDDDDDDDD:', data);
       // axios.delete(
       //   `https://laureles-ap.onrender.com/api/v1/turno/turno/${data.creado.movil}`
       // ).then(res => console.log('Ya borre en sockets', res))
@@ -211,7 +199,6 @@ const Servicio2 = ({
 
     let res12;
 
-    console.log('Yo soy data ', data.Turnos)
     try {
       res12 = await axios.get(
         `https://laureles-ap.onrender.com/api/v1/turno/turno/${data.movil}`
@@ -226,7 +213,6 @@ const Servicio2 = ({
       const res1 = await axios.delete(
         `https://laureles-ap.onrender.com/api/v1/turno/turno/${data.movil}`
       );
-      console.log("Elimine, ", res1);
     } catch (error) {
       toast.error("Error al eliminar el turno.");
       console.error("Error al eliminar el turno:", error);
@@ -235,7 +221,6 @@ const Servicio2 = ({
 
     data.conductor = res12.data.turnos.cedconduce;
 
-    console.log('Soy la data creando turno ', data)
 
     axios
       .post("https://laureles-ap.onrender.com/api/v1/servicio/servicio", data)

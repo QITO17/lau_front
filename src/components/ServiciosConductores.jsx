@@ -27,7 +27,6 @@ const ServiciosConductores = () => {
   }, []);
 
   const onUpdateServicios = () => {
-    console.log("ME EJECUTEEEEEEEEEEE PANDASSSSSSSSSSSSSSSSSS");
     fetchServicios();
   };
 

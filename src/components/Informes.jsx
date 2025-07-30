@@ -16,7 +16,6 @@ const ExportReportButton = () => {
       ); // Cambia esto con tu endpoint
       const data = await response.json();
 
-      console.log(data.Servicios);
       // Convertir los datos del informe a formato de Excel
       const ws = XLSX.utils.json_to_sheet(data.Servicios); // Convierte JSON a una hoja de trabajo (worksheet)
       const wb = XLSX.utils.book_new(); // Crea un nuevo libro de trabajo
@@ -61,9 +60,7 @@ const ExportReportButton = () => {
         "https://laureles-ap.onrender.com/api/v1/movil/movil"
       ); // Cambia esto con tu endpoint
       const data = await response.json();
-      console.log(response, "");
-      console.log(data);
-      console.log(data.Movil);
+
       // Convertir los datos del informe a formato de Excel
       const ws = XLSX.utils.json_to_sheet(data.Movil); // Convierte JSON a una hoja de trabajo (worksheet)
       const wb = XLSX.utils.book_new(); // Crea un nuevo libro de trabajo

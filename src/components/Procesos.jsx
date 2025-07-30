@@ -11,7 +11,6 @@ const Procesos = ({ isModalOpen2, openModal2, closeModal2 }) => {
   const [fechaFinaliza, setFechaFinaliza] = useState("");
 
   const limpiar = () => {
-    console.log("Limpie");
     setMovil("");
     setConductor("");
     setMotivo("Motivo 1");

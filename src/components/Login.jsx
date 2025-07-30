@@ -23,14 +23,11 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name)
-    console.log(password)
     // dispatch(setNameTrainer(e.target.nameTrainer.value));
     const data = {
       nombre: name,
       password,
     };
-    console.log('hago peticion')
     axios
     .post("https://laureles-ap.onrender.com/api/v1/login/login", data)
     .then((res) => {
@@ -40,8 +37,6 @@ const Login = () => {
       if (res.data.login) {
         
         navigate("/principal");
-      } else {
-        console.log('first')
       }
     })
     .catch(err => {

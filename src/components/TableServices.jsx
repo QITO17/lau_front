@@ -2,7 +2,6 @@ import Logo from "/public/ctm2.jpeg";
 import Logo2 from "/public/tolan2.jpg";
 
 const ScrollableTable = ({ servicios }) => {
-  console.log(servicios);
   return (
     <div className="container p-4  ">
       {/* Header Section */}

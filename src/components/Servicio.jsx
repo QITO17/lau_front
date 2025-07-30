@@ -32,8 +32,6 @@ const Servicio = ({
       .then((res) => {
         channel.postMessage(res.data);
         setServicios(res.data);
-        console.log("YA ENVIE CHANNEL");
-        console.log(1);
       })
       .catch((err) => console.log(err));
     // Limpiar el canal al desmontar el componente
@@ -201,12 +199,6 @@ const Servicio = ({
               barrio: "Laureles",
               notas: "Sin Observaciones",
             })
-            .then((postRes) => {
-              console.log("POST exitoso:", postRes);
-            })
-            .catch((postErr) => {
-              console.log("Error en el POST:", postErr);
-            });
         } else {
           console.log("Error en la solicitud GET:", err);
         }
@@ -228,14 +220,12 @@ const Servicio = ({
   };
 
   const getAllFields = async (e) => {
-    console.log(e.target.value);
     if (e.target.value !== "") {
       await axios
         .get(
           `https://laureles-ap.onrender.com/api/v1/clientes/clientes/${e.target.value}`
         )
         .then((res) => {
-          console.log(res.data.Cliente);
           const { nombre, direccion } = res.data.Cliente;
           setUsuario(nombre);
           setDireccion(direccion);

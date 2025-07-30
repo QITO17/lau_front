@@ -15,12 +15,10 @@ const Principal = () => {
 
   // Función para obtener moviles
   const fetchMoviles = () => {
-    console.log("Te di los moviles");
     axios
       .get("https://laureles-ap.onrender.com/api/v1/turno/turno")
       .then((res) => setMovilesState(res.data))
       .catch((err) => console.log(err));
-    console.log(MovilesState);
   };
 
   useEffect(() => {
